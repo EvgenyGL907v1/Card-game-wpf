@@ -1,0 +1,111 @@
+﻿<Window x:Class="CardGame.GameScence"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardGame"
+        mc:Ignorable="d"
+        Title="GameScence" Height="983.724" Width="1661.059" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closed="Window_Closed">
+
+    <Grid>
+
+        <Image HorizontalAlignment="Left" Height="806" Margin="-42,35,0,0" VerticalAlignment="Top" Width="1644" Source="Resources/field.png"/>
+        <Image HorizontalAlignment="Left" Height="806" Margin="304,35,-293,0" VerticalAlignment="Top" Width="1644" Source="Resources/field.png"/>
+
+        <Image HorizontalAlignment="Left" Height="152" Margin="1393,279,0,0" VerticalAlignment="Top" Width="162" Source="Resources/SkipButton.png"/>
+
+        <Button x:Name="SkipButton" Content="Skip" Margin="1375,259,0,0" RenderTransformOrigin="6.63,0.49" Click="SkipButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="181" Width="185" FontSize="25" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate  TargetType="Button">
+                    <Grid>
+                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center"
+                               VerticalAlignment="Center"></Label>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Image HorizontalAlignment="Left" Height="577" Margin="349,162,0,0" VerticalAlignment="Top" Width="842" Source="Resources/field_part.png"/>
+
+        <Image HorizontalAlignment="Left" Height="152" Margin="1393,440,0,0" VerticalAlignment="Top" Width="162" Source="Resources/SkipButton.png"/>
+
+        <Image HorizontalAlignment="Left" Height="81" Margin="180,13,0,0" VerticalAlignment="Top" Width="100" Source="Resources/health.png" RenderTransformOrigin="3.671,0.496"/>
+        <Image HorizontalAlignment="Left" Height="78" Margin="1430,474,0,0" VerticalAlignment="Top" Width="81" Source="Resources/Debug.png"/>
+        <Image HorizontalAlignment="Left" Height="68" Margin="349,13,0,0" VerticalAlignment="Top" Width="69" Source="Resources/index.png" RenderTransformOrigin="3.671,0.496"/>
+        <Label x:Name="EnemyHP" Content="10" HorizontalAlignment="Left" Margin="268,21,0,0" VerticalAlignment="Top" Cursor="" FontSize="30"/>
+        <Label x:Name="EnemyMP" Content="10" HorizontalAlignment="Left" Margin="423,21,0,0" VerticalAlignment="Top" Cursor="" FontSize="30"/>
+        <Image HorizontalAlignment="Left" Height="81" Margin="180,841,0,0" VerticalAlignment="Top" Width="100" Source="Resources/health.png" RenderTransformOrigin="3.671,0.496"/>
+        <Image HorizontalAlignment="Left" Height="68" Margin="349,841,0,0" VerticalAlignment="Top" Width="69" Source="Resources/index.png" RenderTransformOrigin="3.671,0.496"/>
+        <Label x:Name="PlayerHP" Content="10" HorizontalAlignment="Left" Margin="268,846,0,0" VerticalAlignment="Top" Cursor="" FontSize="30"/>
+        <Label x:Name="PlayerMP" Content="10" HorizontalAlignment="Left" Margin="423,846,0,0" VerticalAlignment="Top" Cursor="" FontSize="30"/>
+
+        <Label x:Name="Footnote" Content="Нет атакующих бойцов" HorizontalAlignment="Left" Margin="523,16,0,0" VerticalAlignment="Top" Foreground="Red" FontSize="30" Height="94"/>
+        <Label x:Name="RoundNumber" Content="Round 5" HorizontalAlignment="Left" Margin="1341,35,0,0" VerticalAlignment="Top" Height="60" Width="207" FontSize="35"/>
+        <Label x:Name="RoundStatus" Content="Вы атакуете" HorizontalAlignment="Left" Margin="1341,95,0,0" VerticalAlignment="Top" Height="60" Width="270" FontSize="35"/>
+        <Label Content="Игрок" HorizontalAlignment="Left" Margin="50,846,0,0" VerticalAlignment="Top" FontSize="35"/>
+        <Label Content="Враг" HorizontalAlignment="Left" Margin="50,16,0,0" VerticalAlignment="Top" FontSize="35"/>
+        <Label Content="Игрок" HorizontalAlignment="Left" Margin="50,846,0,0" VerticalAlignment="Top" FontSize="35"/>
+
+
+        <Canvas HorizontalAlignment="Left" Height="247" Margin="686,693,0,0" VerticalAlignment="Top" Width="232" x:Name="HandCard1Canvas"/>
+        <Canvas HorizontalAlignment="Left" Height="243" Margin="923,698,0,0" VerticalAlignment="Top" Width="232" x:Name="HandCard2Canvas"/>
+        <Canvas HorizontalAlignment="Left" Height="243" Margin="1160,698,0,0" VerticalAlignment="Top" Width="232" x:Name="HandCard3Canvas"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="1397,698,0,0" VerticalAlignment="Top" Width="205" x:Name="HandCard4Canvas"/>
+
+
+        <Button x:Name="DebugButton" Content="" Margin="1375,422,0,0" RenderTransformOrigin="7,0.49" Click="DebugButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="181" Width="185" FontSize="25">
+            <Button.Template>
+                <ControlTemplate  TargetType="{x:Type Button}">
+                    <Grid>
+                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Content="" 
+        x:Name="HandCard1" 
+        BorderBrush="Transparent"
+        BorderThickness="0"
+        VerticalAlignment="Top" Height="247" Margin="686,693,737,0" Click="HandCard1_Click" Background="#00DCAEAE" Foreground="#FFFF0404"/>
+
+        <Button Content="" 
+            x:Name="HandCard2" 
+            BorderBrush="Transparent"
+            BorderThickness="0"
+            VerticalAlignment="Top" Height="247" Margin="923,693,500,0" Click="HandCard2_Click" Background="#00DCAEAE" Foreground="#FFFF0606"/>
+
+        <Button Content="" 
+            x:Name="HandCard3" 
+            BorderBrush="Transparent"
+            BorderThickness="0"
+            VerticalAlignment="Top" Height="247" Margin="1160,698,263,0" Click="HandCard3_Click" Background="#00DCAEAE" Foreground="#FFFF0606"/>
+        <Button Content="" 
+            x:Name="HandCard4" 
+            BorderBrush="Transparent"
+            BorderThickness="0"
+            VerticalAlignment="Top" Height="247" Margin="1397,698,26,0" Click="HandCard4_Click" Background="#00DCAEAE" Foreground="#FFFF0606"/>
+
+
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="118,174,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line1_e"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="118,451,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line1_f"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="353,174,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line2_e"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="353,451,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line2_f"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="589,174,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line3_e"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="589,446,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line3_f"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="824,174,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line4_e"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="824,446,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line4_f"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="1059,174,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line5_e"/>
+        <Canvas HorizontalAlignment="Left" Height="242" Margin="1059,446,0,0" VerticalAlignment="Top" Width="205" x:Name="Card_line5_f"/>
+        <Button x:Name="ChoiceLine1" Content="Выбрать линию 1" HorizontalAlignment="Left" Margin="118,154,0,0" VerticalAlignment="Top" Width="205" Click="ChoiceLine1_Click"/>
+        <Button x:Name="ChoiceLine2" Content="Выбрать линию 2" HorizontalAlignment="Left" Margin="353,154,0,0" VerticalAlignment="Top" Width="205" Click="ChoiceLine2_Click"/>
+        <Button x:Name="ChoiceLine3" Content="Выбрать линию 3" HorizontalAlignment="Left" Margin="589,154,0,0" VerticalAlignment="Top" Width="205" Click="ChoiceLine3_Click"/>
+        <Button x:Name="ChoiceLine4" Content="Выбрать линию 4" HorizontalAlignment="Left" Margin="824,154,0,0" VerticalAlignment="Top" Width="205" Click="ChoiceLine4_Click"/>
+        <Button x:Name="ChoiceLine5" Content="Выбрать линию 5" HorizontalAlignment="Left" Margin="1059,154,0,0" VerticalAlignment="Top" Width="205" Click="ChoiceLine5_Click"/>
+        <Image x:Name="Stage1" HorizontalAlignment="Left" Height="42" Margin="1375,259,0,0" VerticalAlignment="Top" Width="44" Source="Resources/blue_circle.png"/>
+        <Image x:Name="Stage2" HorizontalAlignment="Left" Height="42" Margin="1444,232,0,0" VerticalAlignment="Top" Width="44" Source="Resources/blue_circle.png"/>
+        <Image x:Name="Stage3" HorizontalAlignment="Left" Height="42" Margin="1516,259,0,0" VerticalAlignment="Top" Width="44" Source="Resources/blue_circle.png"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="CardGame.Regulations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="742" Width="687.5" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Правила игры" Grid.Column="1" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Height="46" Width="186" RenderTransformOrigin="1.671,0.904" FontSize="24"/>
+        <Label Content="Вы встречаетесь на поле боя с противником. У вас обоих есть здоровье,&#xA;у кого оно опустится до нуля - тот проиграет, и очки маны, за которые Вы&#xA;и враг разыгрываете существ и заклинания. Вначале раунда у вас&#xA;одинаковое количество очков маны, мана восстанавливается в начале&#xA;нового раунда и счетчик увеличивается на 1 до 10. Также вы вытягиваете&#xA;из колоды по одной карте.&#xA;&#xA;Игровое поле состоит из 5 линий, где сражаются по одному существу в&#xA;каждой линии, если в момент удара на противоположной стороне у&#xA;существа не будет противника, то это существо ударяет врага/Вас.&#xA;Когда номер раунда четный Вы защищаетесь, когда раунд нечетный &#xA;- атакуете.&#xA;&#xD;&#xA;Раунд состоит из 3-х этапов:&#xA;1. Выставление существ.&#xA;2. Срабатывание эффектов, если таковые имеются, также можно&#xA;применять заклинания.&#xA;3. Совершаются удары&#xA;Враг может выставлять существ и играть заклинания и на 2 этапе.&#xA;&#xD;&#xA;Виды карт:&#xA;[Существо] - единственный тип карт, который можно разместить на&#xA;боевом поле, обладает очками атаки и здоровья. А также может иметь &#xA;один из эффектов.&#xA;[Заклинание лечения] - имеет характеристику количество здоровья,&#xA;лечит свое существо на выбранной линии, не может дать здоровья&#xA;больше, чем максимальное.&#xA;[Заклинание урона] - имеет характеристику атаки, наносит урон врагу&#xA;на выбранной линии.&#xA;[Заклинание улучшения] - имеет характеристики атаки, здоровья,&#xA;эффекта, если он имеется. Увеличивает характеристики своего существа&#xA;на выбранной линии и дает ему соответствующий эффект, если у &#xA;существа уже имеется эффект, то он заменяется на эффект заклинания.&#xA;" Grid.Column="1" HorizontalAlignment="Left" Margin="73,71,0,0" VerticalAlignment="Top" Width="600" RenderTransformOrigin="1.671,0.904" FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Visible" Height="625" ScrollViewer.CanContentScroll="True"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="497,10,0,0" VerticalAlignment="Top" Width="140" Height="38" Grid.Column="1" Click="Button_Click"/>
+
+    </Grid>
+</Window>

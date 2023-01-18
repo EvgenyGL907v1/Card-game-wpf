@@ -1,0 +1,31 @@
+﻿<Window x:Class="CardGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="512" Width="417.5" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Меню" Grid.Column="1" HorizontalAlignment="Left" Margin="166,94,0,0" VerticalAlignment="Top" Height="46" Width="81" RenderTransformOrigin="1.671,0.904" FontSize="24"/>
+        <Button Content="Начать новую игру" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Width="178" Height="46" FontSize="18" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="LoadButton" Content="Загрузить игру" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Width="178" Height="46" FontSize="18" Click="LoadButton_Click" Grid.Column="1"/>
+        <Label x:Name="LoadLabel" Content="Есть незавершенная игра" HorizontalAlignment="Center" Margin="0,241,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="1"/>
+        <Button Content="Показать правила" HorizontalAlignment="Center" Margin="0,367,0,0" VerticalAlignment="Top" Width="178" Height="46" Click="Button_Click_1" FontSize="18" Grid.Column="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
+    </Grid>
+</Window>
